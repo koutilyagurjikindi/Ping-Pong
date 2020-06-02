@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pretty-quick": "pretty-quick"
   },
   "dependencies": {
     "react": "16.11.0",
@@ -31,6 +32,7 @@
     "lint-staged": "^10.2.7",
     "metro-react-native-babel-preset": "0.58.0",
     "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "react-test-renderer": "16.11.0"
   },
   "jest": {
@@ -38,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && pretty-quick --staged",
       "pre-push": "npm test"
     }
   },
