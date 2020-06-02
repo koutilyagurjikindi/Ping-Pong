@@ -33,7 +33,8 @@
     "react-test-renderer": "16.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "cacheDirectory": ".jest/cache"
   },
   "husky": {
     "hooks": {
