@@ -43,10 +43,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/vendor/**"
+    "setupFiles": [
+      "./node_modules/"
     ]
   },
   "husky": {
