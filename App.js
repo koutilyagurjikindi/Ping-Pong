@@ -99,7 +99,7 @@ const App = () => {
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>Check the eslint</Text>
+              <Text style={styles.sectionDescription}>Check the test</Text>
             </View>
             <LearnMoreLinks />
           </View>
