@@ -28,6 +28,8 @@ const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+
+      
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
