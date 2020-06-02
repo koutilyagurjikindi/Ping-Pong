@@ -38,7 +38,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm test && npm lint && prettier --check"
+      "pre-push": "npm test"
     }
   },
   "lint-staged": {
