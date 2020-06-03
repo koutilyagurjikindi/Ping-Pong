@@ -50,9 +50,9 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({navigation}) => {
-  const {Playerstate, Playerdispatch} = React.useContext(Context);
+  const Player = React.useContext(Context);
   function HomeDispatch(data) {
-    Playerdispatch({type: 'Pingpong', payload: data});
+    Player.Playerdispatch({type: 'Pingpong', payload: data});
   }
   return (
     <View style={styles.MainView}>
@@ -65,7 +65,7 @@ const Home = ({navigation}) => {
           <Text style={styles.PlayerText}>Player 1 Name</Text>
           <TextInput
             style={styles.PlayerTextInput}
-            value={Playerstate.PlayerName1}
+            value={Player.Playerstate.PlayerName1}
             onChangeText={(value) => {
               HomeDispatch({PlayerName1: value});
             }}
@@ -75,7 +75,7 @@ const Home = ({navigation}) => {
           <Text style={styles.PlayerText}>Player 2 Name</Text>
           <TextInput
             style={styles.PlayerTextInput}
-            value={Playerstate.PlayerName2}
+            value={Player.Playerstate.PlayerName2}
             onChangeText={(value) => {
               HomeDispatch({PlayerName2: value});
             }}
