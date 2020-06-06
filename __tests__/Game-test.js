@@ -1,8 +1,8 @@
 import 'react-native';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import jest from 'jest';
 import Game from '../src/Game';
 
 it('renders correctly', () => {
-  renderer.create(<Game />);
+  jest.mock(<Game />);
 });
