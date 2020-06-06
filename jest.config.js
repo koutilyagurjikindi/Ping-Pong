@@ -1,8 +1,8 @@
 module.exports = {
   preset: 'react-native',
   transform: {
-    '^.+\\.(js)$': require.resolve('react-native/jest/preprocessor.js'),
     '^.+\\.(js)$$': 'babel-jest',
+    '^.+\\.(js)$': require.resolve('react-native/jest/preprocessor.js'),
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
   },
