@@ -5,6 +5,7 @@ module.exports = {
   },
   setupFiles: [
     '<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js',
+    '<rootDir>/src/Game.js',
   ],
   testPathIgnorePatterns: ['<rootDir>/node_modules'],
 };
