@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   StyleSheet,
@@ -8,7 +8,7 @@ import {
   Platform,
 } from 'react-native';
 
-import {Context} from './Store';
+import Store, {Context} from './ContextStore';
 
 const styles = StyleSheet.create({
   SecondMainHome: {
@@ -53,8 +53,16 @@ const styles = StyleSheet.create({
   },
 });
 
+export default function GameWrapper() {
+  return (
+    <Store>
+      <Game />
+    </Store>
+  );
+}
+
 const Game = () => {
-  const {Playerstate, Playerdispatch} = React.useContext(Context);
+  const {Playerstate, Playerdispatch} = useContext(Context);
   function GameDispatch(data) {
     Playerdispatch({type: 'Pingpong', payload: data});
   }
@@ -118,5 +126,3 @@ const Game = () => {
     </View>
   );
 };
-
-export default Game;
