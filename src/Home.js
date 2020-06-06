@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   Text,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 });
 
 const Home = ({navigation}) => {
-  const {Playerstate, Playerdispatch} = React.useContext(Context);
+  const {Playerstate, Playerdispatch} = useContext(Context);
   function HomeDispatch(data) {
     Playerdispatch({type: 'Pingpong', payload: data});
   }
