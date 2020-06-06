@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
 
 const Game = () => {
   const {Playerstate, Playerdispatch} = useContext(Context);
-  console.log('dfkdjfkd', Playerstate, Playerdispatch);
   function GameDispatch(data) {
     Playerdispatch({type: 'Pingpong', payload: data});
   }

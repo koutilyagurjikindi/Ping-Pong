@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
 
 const Home = ({navigation}) => {
   const {Playerstate, Playerdispatch} = useContext(Context);
-  console.log(Playerstate, Playerdispatch);
   function HomeDispatch(data) {
     Playerdispatch({type: 'Pingpong', payload: data});
   }
