@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {Context} from './Store';
+import Store, {Context} from './ContextStore';
 
 const styles = StyleSheet.create({
   MainView: {
@@ -48,6 +48,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
+export default function HomeWrapper() {
+  return (
+    <Store>
+      <Home />
+    </Store>
+  );
+}
 
 const Home = ({navigation}) => {
   const {Playerstate, Playerdispatch} = useContext(Context);
@@ -93,5 +101,3 @@ const Home = ({navigation}) => {
     </View>
   );
 };
-
-export default Home;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const InitialState = {
   PlayerName1: '',
   PlayerName2: '',
@@ -16,6 +14,4 @@ function PlayerStore(state = InitialState, action) {
   }
 }
 
-const Context = React.createContext();
-
-export {InitialState, PlayerStore, Context};
+export {InitialState, PlayerStore};

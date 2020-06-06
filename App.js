@@ -4,21 +4,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/Home';
 import Game from './src/Game';
-import {PlayerStore, InitialState, Context} from './src/Store';
+import Store from './src/ContextStore';
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  const [Playerstate, Playerdispatch] = React.useReducer(
-    PlayerStore,
-    InitialState,
-  );
   return (
-    <Context.Provider
-      value={{
-        Playerstate,
-        Playerdispatch,
-      }}>
+    <Store>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
@@ -31,7 +23,7 @@ const App = () => {
           <Stack.Screen name="Game" component={Game} />
         </Stack.Navigator>
       </NavigationContainer>
-    </Context.Provider>
+    </Store>
   );
 };
 
