@@ -41,12 +41,6 @@
     "pretty-quick": "^2.0.1",
     "react-test-renderer": "16.11.0"
   },
-  "jest": {
-    "preset": "react-native",
-    "setupFiles": [
-      "./node_modules/react-native-gesture-handler/jestSetup.js"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && pretty-quick --staged",
