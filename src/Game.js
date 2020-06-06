@@ -8,7 +8,7 @@ import {
   Platform,
 } from 'react-native';
 
-import Store, {Context} from './ContextStore';
+import {Context} from './ContextStore';
 
 const styles = StyleSheet.create({
   SecondMainHome: {
@@ -60,69 +60,67 @@ const Game = () => {
     Playerdispatch({type: 'Pingpong', payload: data});
   }
   return (
-    <Store>
-      <View style={styles.SecondMainHome}>
-        <StatusBar barStyle="default" />
-        <View style={styles.Game}>
-          <View style={styles.GameName}>
-            <View>
-              <Text style={styles.GameText}>{Playerstate.PlayerName1}</Text>
-            </View>
-            <View>
-              <TouchableOpacity
-                style={styles.GameButton}
-                onPress={() => {
-                  GameDispatch({
-                    Player1wongame: Playerstate.Player1wongame + 1,
-                  });
-                }}>
-                <Text>Add Win</Text>
-              </TouchableOpacity>
-            </View>
+    <View style={styles.SecondMainHome}>
+      <StatusBar barStyle="default" />
+      <View style={styles.Game}>
+        <View style={styles.GameName}>
+          <View>
+            <Text style={styles.GameText}>{Playerstate.PlayerName1}</Text>
           </View>
-          {/* Win Value is Display Here */}
-          <View style={styles.WinView}>
-            <View>
-              <Text style={styles.WinText}>Wins:</Text>
-            </View>
-            <View>
-              <Text style={styles.WinTextValue}>
-                {Playerstate.Player1wongame}
-              </Text>
-            </View>
+          <View>
+            <TouchableOpacity
+              style={styles.GameButton}
+              onPress={() => {
+                GameDispatch({
+                  Player1wongame: Playerstate.Player1wongame + 1,
+                });
+              }}>
+              <Text>Add Win</Text>
+            </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.Game}>
-          <View style={styles.GameName}>
-            <View>
-              <Text style={styles.GameText}>{Playerstate.PlayerName2}</Text>
-            </View>
-            <View>
-              <TouchableOpacity
-                style={styles.GameButton}
-                onPress={() => {
-                  GameDispatch({
-                    Player2wongame: Playerstate.Player2wongame + 1,
-                  });
-                }}>
-                <Text>Add Win</Text>
-              </TouchableOpacity>
-            </View>
+        {/* Win Value is Display Here */}
+        <View style={styles.WinView}>
+          <View>
+            <Text style={styles.WinText}>Wins:</Text>
           </View>
-          {/* Win Value is Display Here */}
-          <View style={styles.WinView}>
-            <View>
-              <Text style={styles.WinText}>Wins:</Text>
-            </View>
-            <View>
-              <Text style={styles.WinTextValue}>
-                {Playerstate.Player2wongame}
-              </Text>
-            </View>
+          <View>
+            <Text style={styles.WinTextValue}>
+              {Playerstate.Player1wongame}
+            </Text>
           </View>
         </View>
       </View>
-    </Store>
+      <View style={styles.Game}>
+        <View style={styles.GameName}>
+          <View>
+            <Text style={styles.GameText}>{Playerstate.PlayerName2}</Text>
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.GameButton}
+              onPress={() => {
+                GameDispatch({
+                  Player2wongame: Playerstate.Player2wongame + 1,
+                });
+              }}>
+              <Text>Add Win</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        {/* Win Value is Display Here */}
+        <View style={styles.WinView}>
+          <View>
+            <Text style={styles.WinText}>Wins:</Text>
+          </View>
+          <View>
+            <Text style={styles.WinTextValue}>
+              {Playerstate.Player2wongame}
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
   );
 };
 

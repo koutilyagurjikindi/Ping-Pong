@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import Store, {Context} from './ContextStore';
+import {Context} from './ContextStore';
 
 const styles = StyleSheet.create({
   MainView: {
@@ -56,44 +56,42 @@ const Home = ({navigation}) => {
     Playerdispatch({type: 'Pingpong', payload: data});
   }
   return (
-    <Store>
-      <View style={styles.MainView}>
-        <StatusBar barStyle={'default'} />
-        <ScrollView
-          style={styles.ScrollView}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="none">
-          <View style={styles.Player}>
-            <Text style={styles.PlayerText}>Player 1 Name</Text>
-            <TextInput
-              style={styles.PlayerTextInput}
-              value={Playerstate.PlayerName1}
-              onChangeText={(value) => {
-                HomeDispatch({PlayerName1: value});
-              }}
-            />
-          </View>
-          <View style={styles.Player}>
-            <Text style={styles.PlayerText}>Player 2 Name</Text>
-            <TextInput
-              style={styles.PlayerTextInput}
-              value={Playerstate.PlayerName2}
-              onChangeText={(value) => {
-                HomeDispatch({PlayerName2: value});
-              }}
-            />
-          </View>
+    <View style={styles.MainView}>
+      <StatusBar barStyle={'default'} />
+      <ScrollView
+        style={styles.ScrollView}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="none">
+        <View style={styles.Player}>
+          <Text style={styles.PlayerText}>Player 1 Name</Text>
+          <TextInput
+            style={styles.PlayerTextInput}
+            value={Playerstate.PlayerName1}
+            onChangeText={(value) => {
+              HomeDispatch({PlayerName1: value});
+            }}
+          />
+        </View>
+        <View style={styles.Player}>
+          <Text style={styles.PlayerText}>Player 2 Name</Text>
+          <TextInput
+            style={styles.PlayerTextInput}
+            value={Playerstate.PlayerName2}
+            onChangeText={(value) => {
+              HomeDispatch({PlayerName2: value});
+            }}
+          />
+        </View>
 
-          <TouchableOpacity style={styles.Button}>
-            <Text
-              style={styles.ButtonText}
-              onPress={() => navigation.navigate('Game')}>
-              Continue
-            </Text>
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
-    </Store>
+        <TouchableOpacity style={styles.Button}>
+          <Text
+            style={styles.ButtonText}
+            onPress={() => navigation.navigate('Game')}>
+            Continue
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </View>
   );
 };
 
