@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {AppRegistry} from 'react-native';
 import Home from './src/Home';
 import Game from './src/Game';
 import Store from './src/ContextStore';
@@ -28,3 +29,5 @@ const App = () => {
 };
 
 export default App;
+
+AppRegistry.registerComponent(App);

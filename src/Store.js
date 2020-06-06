@@ -1,6 +1,6 @@
 const InitialState = {
-  PlayerName1: '',
-  PlayerName2: '',
+  PlayerName1: 'dsmsnds',
+  PlayerName2: 'dksjd',
   Player1wongame: 0,
   Player2wongame: 0,
 };
